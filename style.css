@@ -1749,3 +1749,522 @@ img {
   justify-content: center;
   z-index: 10;
 }
+
+/* ==========================================================================
+   BLOG & ARTICLE PAGES STYLING - HANUMAN ESTATES
+   ========================================================================== */
+
+/* Blog Card Grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 580px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.blog-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(198, 156, 58, 0.4);
+}
+
+.blog-card-media {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.blog-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.blog-card:hover .blog-card-img {
+  transform: scale(1.08);
+}
+
+.blog-card-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(4px);
+  color: var(--primary-gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.blog-card-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.blog-card-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.blog-card-title {
+  font-size: 1.35rem;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.blog-card-desc {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.blog-read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-gold);
+  font-weight: 700;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.blog-read-more-btn:hover {
+  color: #111827;
+  gap: 0.75rem;
+}
+
+/* ==========================================================================
+   FULL ARTICLE PAGE STYLING
+   ========================================================================== */
+.article-header {
+  background: linear-gradient(135deg, rgba(12, 16, 23, 0.92), rgba(12, 16, 23, 0.82)),
+              url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+  color: #ffffff;
+  padding: 8rem 0 4.5rem;
+  text-align: center;
+}
+
+.article-header .section-badge {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--primary-gold);
+  border: 1px solid rgba(198, 156, 58, 0.4);
+}
+
+.article-header-title {
+  font-size: 2.8rem;
+  max-width: 950px;
+  margin: 1rem auto 1.25rem;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .article-header-title {
+    font-size: 2rem;
+  }
+}
+
+.article-meta-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: #d1d5db;
+  margin-top: 1rem;
+}
+
+.article-meta-bar span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3.5rem;
+  align-items: flex-start;
+  padding: 4rem 0 6rem;
+}
+
+@media (max-width: 992px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Table of Contents Sticky Sidebar */
+.toc-sidebar {
+  position: sticky;
+  top: 100px;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.toc-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #111827;
+  font-family: var(--font-body);
+}
+
+.toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+}
+
+.toc-list a {
+  color: var(--text-muted);
+  display: block;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border-left: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.toc-list a:hover {
+  color: var(--primary-gold);
+  border-left-color: var(--primary-gold);
+  background: var(--bg-light);
+  padding-left: 0.85rem;
+}
+
+/* Article Body Content */
+.article-body {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  color: #374151;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .article-body {
+    padding: 1.75rem;
+  }
+}
+
+.article-body h2 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin: 2.5rem 0 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.article-body h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.article-body h3 {
+  font-size: 1.4rem;
+  color: #1e293b;
+  margin: 1.8rem 0 0.85rem;
+}
+
+.article-body p {
+  margin-bottom: 1.35rem;
+}
+
+.article-body ul, .article-body ol {
+  margin: 0 0 1.5rem 1.75rem;
+}
+
+.article-body li {
+  margin-bottom: 0.5rem;
+}
+
+/* Callout Quote Boxes */
+.quote-box {
+  background: var(--bg-sand);
+  border-left: 4px solid var(--primary-gold);
+  padding: 1.5rem 2rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #111827;
+  margin: 2rem 0;
+}
+
+.key-takeaway-box {
+  background: #fdfbf7;
+  border: 1px solid rgba(198, 156, 58, 0.35);
+  border-left: 5px solid var(--primary-gold);
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-md);
+  margin: 2rem 0;
+}
+
+.key-takeaway-box strong {
+  color: #8c6819;
+  font-size: 1.05rem;
+}
+
+/* Article Illustrations & Figures */
+.article-figure {
+  margin: 2.5rem 0;
+  text-align: center;
+}
+
+.article-figure img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.article-figure figcaption {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* Comparison Tables */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.article-table th {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.82rem;
+}
+
+.article-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-light);
+  color: #374151;
+}
+
+.article-table tr:nth-child(even) td {
+  background: #fcfbf9;
+}
+
+.article-table tr:hover td {
+  background: var(--gold-light);
+}
+
+/* Buyer Persona Cards */
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.persona-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.persona-card:hover {
+  border-color: var(--primary-gold);
+  transform: translateY(-4px);
+}
+
+.persona-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--gold-light);
+  color: var(--primary-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.persona-card h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+  color: #111827;
+}
+
+.persona-card .persona-needs {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.persona-card .persona-approach {
+  font-size: 0.85rem;
+  color: #1f2937;
+  border-top: 1px dashed var(--border-light);
+  padding-top: 0.75rem;
+}
+
+/* In-Article CTA Banner */
+.article-cta-box {
+  background: linear-gradient(135deg, #0c1017, #1f2937);
+  color: #ffffff;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  margin: 3rem 0;
+  text-align: center;
+  border: 1px solid var(--border-dark);
+}
+
+.article-cta-box h3 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.article-cta-box p {
+  color: #d1d5db;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 1.75rem;
+}
+
+.article-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* FAQ Accordion Styling */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.faq-card {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111827;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  color: var(--primary-gold);
+}
+
+.faq-question i {
+  color: var(--primary-gold);
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  padding: 0 1.5rem 1.25rem;
+  color: #4b5563;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+/* Breadcrumbs */
+.breadcrumbs-bar {
+  padding: 1.2rem 0;
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.breadcrumbs-bar a {
+  color: #4b5563;
+}
+
+.breadcrumbs-bar a:hover {
+  color: var(--primary-gold);
+}
+
+.breadcrumbs-bar span {
+  margin: 0 0.5rem;
+  color: #9ca3af;
+}
